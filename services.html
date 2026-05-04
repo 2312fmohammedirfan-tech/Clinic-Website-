@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Services | Apex Dental Clinic</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .page-hero { background: var(--bg-color); padding: 80px 0; text-align: center; border-bottom: 1px solid var(--border); }
+    
+    .benefits-list { list-style: none; display: flex; flex-direction: column; gap: 16px; margin-top: 24px; }
+    .benefits-list li { display: flex; align-items: start; gap: 12px; }
+    .benefits-list .check { color: var(--secondary); font-size: 20px; font-weight: bold; }
+    
+    .pricing-grid { display: grid; gap: 32px; grid-template-columns: 1fr; margin-top: 32px; }
+    @media (min-width: 768px) { .pricing-grid { grid-template-columns: repeat(3, 1fr); } }
+    .pricing-card { text-align: center; border: 1px solid var(--border); }
+    .pricing-card.premium { border-color: var(--primary); box-shadow: var(--shadow-hover); position: relative; }
+    .pricing-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--primary); color: white; padding: 4px 12px; font-size: 12px; font-weight: 600; border-radius: 12px; }
+    .price { font-size: 48px; font-weight: 700; color: var(--text-dark); margin: 16px 0; }
+    .price span { font-size: 16px; color: var(--text-light); font-weight: 400; }
+    
+    .faq-item { border-bottom: 1px solid var(--border); padding: 16px 0; }
+    .faq-question { width: 100%; display: flex; justify-content: space-between; align-items: center; background: none; border: none; font-size: 18px; font-weight: 600; color: var(--text-dark); cursor: pointer; text-align: left; padding: 8px 0; }
+    .faq-icon { font-size: 24px; transition: transform 0.2s; color: var(--primary); }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; color: var(--text-light); padding-right: 24px; }
+    .faq-item.active .faq-answer { max-height: 200px; margin-top: 8px; }
+    .faq-item.active .faq-icon { transform: rotate(45deg); }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" style="text-decoration:none; display:flex; align-items:center; gap:8px;">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm1-5h-2V7h2v4z"/></svg>
+        <span style="font-weight:700; font-size:20px; color:var(--text-dark);">Apex Clinic</span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="services.html" style="color:var(--primary);">Services</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#reviews">Reviews</a>
+        <a href="contact.html">Contact</a>
+        <a href="contact.html" class="btn btn-primary" style="margin-left: 16px;">Book Now</a>
+      </nav>
+      <button class="menu-btn" id="menu-btn" aria-label="Toggle Navigation">&#9776;</button>
+    </div>
+  </header>
+
+  <!-- Mobile Nav -->
+  <nav class="mobile-nav" id="mobile-nav">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#reviews">Reviews</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <!-- Sticky Mobile CTA -->
+  <div class="sticky-cta">
+    <a href="tel:+123456789" class="sticky-cta-call">Call Now</a>
+    <a href="contact.html" class="sticky-cta-book">Book Now</a>
+  </div>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <h1>Premium Dental Services</h1>
+      <p style="max-width: 600px; margin: 16px auto 32px;">From routine cleanings to advanced cosmetics, our comprehensive dental services ensure your smile remains bright, healthy, and beautiful.</p>
+      <a href="contact.html" class="btn btn-primary">Schedule Consultation</a>
+    </div>
+  </section>
+
+  <!-- Service Details & Benefits -->
+  <section class="section">
+    <div class="container grid-2" style="align-items: center;">
+      <div>
+        <h2>Comprehensive Care Process</h2>
+        <p style="margin-top: 16px;">At Apex Dental, we use the latest technology to provide personalized treatments. Our process is designed to be completely pain-free, fast, and transparent.</p>
+        <ul class="benefits-list">
+          <li><span class="check">✓</span> <div><strong>Thorough Diagnostics</strong><p class="text-small">We use 3D imaging for precise assessment.</p></div></li>
+          <li><span class="check">✓</span> <div><strong>Pain-free Treatments</strong><p class="text-small">Modern anesthetics ensure zero discomfort.</p></div></li>
+          <li><span class="check">✓</span> <div><strong>Post-Care Instructions</strong><p class="text-small">We guide you through the healing process.</p></div></li>
+        </ul>
+      </div>
+      <div>
+        <div style="background:var(--bg-color); border-radius:var(--radius-lg); padding:40px; text-align:center;">
+          <img src="images/doctor_illustration.png" alt="Doctor" style="max-height:300px; object-fit:contain;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Cards -->
+  <section class="section" style="background: var(--surface);">
+    <div class="container">
+      <h2 class="section-title">Transparent Pricing</h2>
+      <div class="pricing-grid">
+        <div class="card pricing-card">
+          <h3 style="color:var(--text-light);">Checkup</h3>
+          <div class="price">$49 <span>/ session</span></div>
+          <p class="text-small" style="margin-bottom:24px;">Essential care to keep your teeth completely healthy.</p>
+          <ul style="list-style:none; text-align:left; gap:12px; display:flex; flex-direction:column; margin-bottom:32px;">
+            <li>✓ Full Mouth Exam</li>
+            <li>✓ Digital X-Rays</li>
+            <li>✓ Treatment Plan</li>
+          </ul>
+          <a href="contact.html" class="btn btn-secondary" style="width:100%;">Book Checkup</a>
+        </div>
+        <div class="card pricing-card premium">
+          <div class="pricing-badge">MOST POPULAR</div>
+          <h3 style="color:var(--primary);">Whitening</h3>
+          <div class="price">$199 <span>/ treatment</span></div>
+          <p class="text-small" style="margin-bottom:24px;">Professional brightening for a stunning smile.</p>
+          <ul style="list-style:none; text-align:left; gap:12px; display:flex; flex-direction:column; margin-bottom:32px;">
+            <li>✓ Up to 8 shades lighter</li>
+            <li>✓ Safe for enamel</li>
+            <li>✓ Includes take-home kit</li>
+          </ul>
+          <a href="contact.html" class="btn btn-primary" style="width:100%;">Book Whitening</a>
+        </div>
+        <div class="card pricing-card">
+          <h3 style="color:var(--text-light);">Implants</h3>
+          <div class="price">From $899 <span>/ tooth</span></div>
+          <p class="text-small" style="margin-bottom:24px;">Permanent, fully natural-looking tooth replacements.</p>
+          <ul style="list-style:none; text-align:left; gap:12px; display:flex; flex-direction:column; margin-bottom:32px;">
+            <li>✓ Titanium root implant</li>
+            <li>✓ Custom-matched crown</li>
+            <li>✓ Lifetime warranty*</li>
+          </ul>
+          <a href="contact.html" class="btn btn-secondary" style="width:100%;">Consult Form</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section">
+    <div class="container" style="max-width: 800px;">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <div class="faq-container">
+        <div class="faq-item">
+          <button class="faq-question">Do you accept insurance? <span class="faq-icon">+</span></button>
+          <div class="faq-answer">Yes, we accept most major dental insurances. Please bring your card to your appointment or call us beforehand to verify your specific provider.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">How long does a regular checkup take? <span class="faq-icon">+</span></button>
+          <div class="faq-answer">A comprehensive exam and cleaning typically takes about 45 to 60 minutes. We pride ourselves on being fast and efficient while thorough.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Are treatments painful? <span class="faq-icon">+</span></button>
+          <div class="faq-answer">We use the latest tools and localized anesthetics to ensure that virtually all of our treatments are comfortable and completely pain-free.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom CTA -->
+  <section class="section">
+    <div class="container">
+      <div style="background:var(--primary); padding:64px; text-align:center; border-radius:var(--radius-lg); color:white;">
+        <h2 style="color:white; margin-bottom:16px;">Ready to Improve Your Smile?</h2>
+        <p style="margin-bottom: 32px;">Join hundreds of happy patients. Fast booking, precise care.</p>
+        <a href="contact.html" class="btn" style="background:white; color:var(--primary);">Book Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer style="padding-top: 80px;">
+    <div class="container grid-3" style="gap: 48px; margin-bottom: 48px;">
+      <div>
+        <h3 style="margin-bottom: 16px; color: white;">Apex Clinic</h3>
+        <p>Premium, affordable dental care for the entire family. State-of-the-art facilities and experienced staff.</p>
+      </div>
+      <div>
+        <h3 style="margin-bottom: 16px; color: white;">Links</h3>
+        <ul style="list-style:none;">
+          <li style="margin-bottom:8px;"><a href="index.html">Home</a></li>
+          <li style="margin-bottom:8px;"><a href="services.html">Services</a></li>
+          <li style="margin-bottom:8px;"><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="margin-bottom: 16px; color: white;">Services</h3>
+        <ul style="list-style:none;">
+          <li style="margin-bottom:8px;"><a href="services.html">General Dentistry</a></li>
+          <li style="margin-bottom:8px;"><a href="services.html">Teeth Whitening</a></li>
+          <li style="margin-bottom:8px;"><a href="services.html">Implants</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container" style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px; text-align: center; color: var(--text-light); font-size: 14px;">
+      &copy; 2026 Apex Clinic. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apex Dental Clinic | Affordable Care You Can Trust</title>
+  <meta name="description" content="Book your appointment in under 60 seconds with Apex Dental Clinic. Experienced doctors, premium care, affordable pricing.">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Scoped specific styles for index */
+    .hero { padding: 120px 0 40px; position: relative; overflow: hidden; }
+    .hero-bg {
+       position: absolute; top: -50%; left: 50%; transform: translateX(-50%);
+       width: 100vw; height: 100vw; background: radial-gradient(circle, rgba(37,99,235,0.05) 0%, rgba(37,99,235,0) 70%); border-radius: 50%; z-index: -1;
+    }
+    .hero-content { display: flex; flex-direction: column; justify-content: center; }
+    .hero-content h1 { margin-bottom: 24px; color: var(--text-dark); }
+    .hero-content p { font-size: 18px; margin-bottom: 32px; max-width: 480px; }
+    .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+    
+    .trust-bar { background: #F1F5F9; padding: 24px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .trust-bar-grid { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; font-size: 14px; font-weight: 500; }
+    .trust-item { display: flex; align-items: center; gap: 8px; }
+    
+    .service-icon { background: rgba(37,99,235,0.1); width: 48px; height: 48px; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 24px; margin-bottom: 16px; font-weight: bold; }
+    .card-title { margin-bottom: 8px; font-size: 20px; }
+    .card-link { color: var(--primary); font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px; margin-top: 16px; }
+    .card-link:hover { text-decoration: underline; }
+    
+    .checklist { list-style: none; margin-top: 32px; }
+    .checklist li { margin-bottom: 16px; display: flex; align-items: center; gap: 12px; font-size: 18px; font-weight: 500; }
+    .check-icon { color: var(--primary); }
+    
+    .testimonial-card { display: flex; flex-direction: column; justify-content: space-between; gap: 16px; }
+    .stars { color: #F59E0B; }
+    
+    .process-grid { display: grid; grid-template-columns: 1fr; gap: 32px; text-align: center; position: relative; }
+    @media (min-width: 768px) {
+      .process-grid { grid-template-columns: repeat(3, 1fr); align-items: start; }
+      .process-line { position: absolute; top: 32px; left: 16%; right: 16%; height: 2px; background: var(--border); z-index: -1; }
+    }
+    .process-step { background: var(--surface); width: 64px; height: 64px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: 700; color: var(--primary); margin: 0 auto 16px; border: 4px solid var(--bg-color); box-shadow: var(--shadow-soft); }
+    
+    .cta-banner { background: var(--primary); padding: 80px 0; text-align: center; color: white; border-radius: var(--radius-lg); margin: 80px 0; }
+    .cta-banner h2 { color: white; margin-bottom: 24px; }
+    .cta-banner .btn { background: white; color: var(--primary); }
+    .cta-banner .btn:hover { background: var(--bg-color); }
+    
+    .contact-preview { background: var(--surface); padding: 48px; border-radius: var(--radius-lg); box-shadow: var(--shadow-soft); margin-bottom: -100px; position: relative; z-index: 10; }
+    
+    @media (max-width: 768px) {
+      .hero { padding-top: 60px; text-align: center; }
+      .hero-content { align-items: center; }
+      .contact-preview { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" style="text-decoration:none; display:flex; align-items:center; gap:8px;">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm1-5h-2V7h2v4z"/></svg>
+        <span style="font-weight:700; font-size:20px; color:var(--text-dark);">Apex Clinic</span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#reviews">Reviews</a>
+        <a href="contact.html">Contact</a>
+        <a href="contact.html" class="btn btn-primary" style="margin-left: 16px;">Book Now</a>
+      </nav>
+      <button class="menu-btn" id="menu-btn" aria-label="Toggle Navigation">&#9776;</button>
+    </div>
+  </header>
+
+  <!-- Mobile Nav -->
+  <nav class="mobile-nav" id="mobile-nav">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#reviews">Reviews</a>
+        <a href="contact.html">Contact</a>
+  </nav>
+
+  <!-- Sticky Mobile CTA -->
+  <div class="sticky-cta">
+    <a href="tel:+123456789" class="sticky-cta-call">Call Now</a>
+    <a href="contact.html" class="sticky-cta-book">Book Now</a>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="container grid-2">
+      <div class="hero-content">
+        <h1>Affordable Dental Care You Can Trust</h1>
+        <p>Book your appointment in under 60 seconds. Experience state-of-the-art modern dentistry starting today.</p>
+        <div class="hero-btns">
+          <a href="contact.html" class="btn btn-primary">Book Appointment</a>
+          <a href="tel:+123456789" class="btn btn-secondary">Call Now</a>
+        </div>
+      </div>
+      <div class="hero-image" style="display:flex; justify-content:center; align-items:center;">
+        <img src="images/doctor_illustration.png" alt="Friendly Doctor Illustration" style="max-height: 500px; object-fit: contain;">
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Bar -->
+  <div class="trust-bar">
+    <div class="container trust-bar-grid">
+      <div class="trust-item"><span class="stars">★★★★★</span> 4.9 Rating</div>
+      <div class="trust-item">👥 500+ Happy Patients</div>
+      <div class="trust-item">👩‍⚕️ Certified Doctors</div>
+      <div class="trust-item">🎧 24/7 Support</div>
+    </div>
+  </div>
+
+  <!-- Services Section -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Our Services</h2>
+      <div class="grid-3">
+        <div class="card">
+          <div class="service-icon">🦷</div>
+          <h3 class="card-title">General Dentistry</h3>
+          <p>Comprehensive exams, cleaning, and preventative care to keep your smile healthy and bright.</p>
+          <a href="services.html" class="card-link">Learn More &rarr;</a>
+        </div>
+        <div class="card">
+          <div class="service-icon">✨</div>
+          <h3 class="card-title">Teeth Whitening</h3>
+          <p>Professional teeth whitening treatments designed to safely lift stains and brighten your smile.</p>
+          <a href="services.html" class="card-link">Learn More &rarr;</a>
+        </div>
+        <div class="card">
+          <div class="service-icon">🛠️</div>
+          <h3 class="card-title">Dental Implants</h3>
+          <p>Permanent, natural-looking replacement for missing teeth using titanium root implants.</p>
+          <a href="services.html" class="card-link">Learn More &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="section" id="about" style="background-color: var(--surface);">
+    <div class="container grid-2" style="align-items: center;">
+      <div>
+        <img src="images/clinic_interior.png" alt="Modern Clinic Interior" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-hover);">
+      </div>
+      <div style="padding: 0 5%;">
+        <h2>Why Choose Us</h2>
+        <p style="margin-top: 16px;">We combine advanced technology with a compassionate approach to deliver the best dental experience in the city.</p>
+        <ul class="checklist">
+          <li><span class="check-icon">✔️</span> Experienced Doctors</li>
+          <li><span class="check-icon">✔️</span> Affordable Pricing</li>
+          <li><span class="check-icon">✔️</span> Modern Equipment</li>
+          <li><span class="check-icon">✔️</span> Fast Booking</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">How It Works</h2>
+      <div class="process-grid">
+        <div class="process-line"></div>
+        <div>
+          <div class="process-step">1</div>
+          <h3>Book Online</h3>
+          <p style="margin-top: 8px;">Pick a suitable date and time in just a few clicks.</p>
+        </div>
+        <div>
+          <div class="process-step">2</div>
+          <h3>Visit Clinic</h3>
+          <p style="margin-top: 8px;">Arrive at our clinic for a relaxing, modern experience.</p>
+        </div>
+        <div>
+          <div class="process-step">3</div>
+          <h3>Get Treatment</h3>
+          <p style="margin-top: 8px;">Receive top-tier care from our certified experts.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section" id="reviews" style="background-color: var(--surface);">
+    <div class="container">
+      <h2 class="section-title">What Our Patients Say</h2>
+      <div class="grid-3">
+        <div class="card testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"Great service and quick booking! The staff were incredible and made me feel completely at ease."</p>
+          <div style="font-weight: 600; color: var(--text-dark);">– Rahul S.</div>
+        </div>
+        <div class="card testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"The clinic feels very modern and clean. Best dental experience I've had in years."</p>
+          <div style="font-weight: 600; color: var(--text-dark);">– Sarah M.</div>
+        </div>
+        <div class="card testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"Highly recommend! Finally found a clinic that is transparent with pricing and does great work."</p>
+          <div style="font-weight: 600; color: var(--text-dark);">– Kunal T.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA & Contact Preview Region -->
+  <div class="container">
+    <div class="cta-banner">
+      <h2>Book Your Appointment Today</h2>
+      <p style="max-width: 500px; margin: 0 auto 32px; color: rgba(255,255,255,0.9);">Don't let dental problems wait. Schedule your visit with our specialists now and take the first step towards a healthier smile.</p>
+      <a href="contact.html" class="btn" style="padding: 16px 32px; font-size: 18px;">Book Now</a>
+    </div>
+
+    <!-- Contact Preview -->
+    <div class="contact-preview grid-2">
+      <div>
+        <h2>Get in Touch</h2>
+        <p style="margin-top: 8px; margin-bottom: 24px;">Have a question? We're here to help.</p>
+        <div style="margin-bottom: 16px;">
+          <strong>📞 Phone:</strong> <a href="tel:+123456789" style="color:var(--text-light); text-decoration:none;">+1 (234) 567-890</a>
+        </div>
+        <div>
+          <strong>📍 Address:</strong> <span style="color:var(--text-light);">123 Medical Drive, Healthville, 10010</span>
+        </div>
+      </div>
+      <div>
+        <form class="form" id="preview-form" action="contact.html">
+          <div class="form-group">
+            <label class="form-label" for="name">Name</label>
+            <input type="text" id="name" class="form-control" required placeholder="John Doe">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="phone">Phone</label>
+            <input type="tel" id="phone" class="form-control" required placeholder="(123) 456-7890">
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Request</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer style="padding-top: 160px; margin-top: -60px;">
+    <div class="container grid-3" style="gap: 48px; margin-bottom: 48px;">
+      <div>
+        <h3 style="margin-bottom: 16px; color: white;">Apex Clinic</h3>
+        <p>Premium, affordable dental care for the entire family. State-of-the-art facilities and experienced staff.</p>
+      </div>
+      <div>
+        <h3 style="margin-bottom: 16px; color: white;">Links</h3>
+        <ul style="list-style:none;">
+          <li style="margin-bottom:8px;"><a href="index.html">Home</a></li>
+          <li style="margin-bottom:8px;"><a href="services.html">Services</a></li>
+          <li style="margin-bottom:8px;"><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="margin-bottom: 16px; color: white;">Services</h3>
+        <ul style="list-style:none;">
+          <li style="margin-bottom:8px;"><a href="services.html">General Dentistry</a></li>
+          <li style="margin-bottom:8px;"><a href="services.html">Teeth Whitening</a></li>
+          <li style="margin-bottom:8px;"><a href="services.html">Implants</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container" style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px; text-align: center; color: var(--text-light); font-size: 14px;">
+      &copy; 2026 Apex Clinic. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

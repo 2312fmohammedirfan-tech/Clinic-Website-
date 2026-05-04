@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Apex Dental Clinic</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .contact-hero { background: var(--surface); padding: 60px 0; border-bottom: 1px solid var(--border); }
+    .contact-wrapper { padding: 80px 0; }
+    
+    .contact-info-card { background: var(--bg-color); padding: 40px; border-radius: var(--radius-lg); height: 100%; display: flex; flex-direction: column; justify-content: center; }
+    .info-item { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 32px; }
+    .info-icon { background: white; width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; box-shadow: var(--shadow-soft); color: var(--primary); flex-shrink: 0; }
+    
+    .map-container { width: 100%; height: 250px; background: #e2e8f0; border-radius: var(--radius-sm); margin-top: auto; overflow: hidden; position: relative; }
+    .map-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: var(--text-light); font-weight: 500; font-size: 18px; }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" style="text-decoration:none; display:flex; align-items:center; gap:8px;">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm1-5h-2V7h2v4z"/></svg>
+        <span style="font-weight:700; font-size:20px; color:var(--text-dark);">Apex Clinic</span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#reviews">Reviews</a>
+        <a href="contact.html" style="color:var(--primary);">Contact</a>
+        <a href="contact.html" class="btn btn-primary" style="margin-left: 16px;">Book Now</a>
+      </nav>
+      <button class="menu-btn" id="menu-btn" aria-label="Toggle Navigation">&#9776;</button>
+    </div>
+  </header>
+
+  <!-- Mobile Nav -->
+  <nav class="mobile-nav" id="mobile-nav">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#reviews">Reviews</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <!-- Sticky Mobile CTA -->
+  <div class="sticky-cta">
+    <a href="tel:+123456789" class="sticky-cta-call">Call Now</a>
+    <a href="contact.html" class="sticky-cta-book">Book Now</a>
+  </div>
+
+  <div class="contact-hero text-center">
+    <h1 style="text-align:center;">Contact & Booking</h1>
+    <p style="text-align:center; max-width: 500px; margin: 16px auto 0;">We're looking forward to giving you a brighter smile. Find our details or drop us a message below.</p>
+  </div>
+
+  <section class="contact-wrapper container grid-2">
+    <!-- Contact Info -->
+    <div>
+      <div class="contact-info-card">
+        <h2 style="margin-bottom: 32px;">Get in Touch</h2>
+        
+        <div class="info-item">
+          <div class="info-icon">📍</div>
+          <div>
+            <h3>Location</h3>
+            <p style="margin-top:4px;">123 Medical Drive, Healthville, 10010<br>Suite 200</p>
+          </div>
+        </div>
+        
+        <div class="info-item">
+          <div class="info-icon">📞</div>
+          <div>
+            <h3>Phone</h3>
+            <p style="margin-top:4px;"><a href="tel:+123456789" style="color:inherit; text-decoration:none;">+1 (234) 567-890</a></p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-icon">🕒</div>
+          <div>
+            <h3>Hours</h3>
+            <p style="margin-top:4px;">Mon - Fri: 8:00 AM - 6:00 PM<br>Sat: 9:00 AM - 2:00 PM</p>
+          </div>
+        </div>
+
+        <div class="map-container">
+          <!-- Optional placeholder for a map Embed -->
+          <div class="map-placeholder">
+            [ Google Map Embed Area ]
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Booking Form -->
+    <div>
+      <div class="card" style="height:100%; border:1px solid var(--border); box-shadow:none;">
+        <h2 style="margin-bottom: 24px;">Book an Appointment</h2>
+        <form id="contact-form">
+          <div class="form-group grid-2">
+            <div>
+              <label class="form-label" for="firstName">First Name</label>
+              <input type="text" id="firstName" class="form-control" required placeholder="John">
+            </div>
+            <div>
+              <label class="form-label" for="lastName">Last Name</label>
+              <input type="text" id="lastName" class="form-control" required placeholder="Doe">
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="contactPhone">Phone Number</label>
+            <input type="tel" id="contactPhone" class="form-control" required placeholder="(123) 456-7890">
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="service">Service Needed</label>
+            <select id="service" class="form-control" style="background-color: white;" required>
+              <option value="" disabled selected>Select a service</option>
+              <option value="general">General Checkup</option>
+              <option value="whitening">Teeth Whitening</option>
+              <option value="implants">Dental Implants</option>
+              <option value="orthodontics">Orthodontics / Braces</option>
+              <option value="other">Other / Not Sure</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="message">Message (Optional)</label>
+            <textarea id="message" class="form-control" rows="4" placeholder="Briefly describe your concern..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; padding: 16px; font-size:16px;">Submit Request</button>
+          <p class="text-small" style="text-align:center; margin-top:16px;">We will call you back shortly to confirm your booking.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container grid-3" style="gap: 48px; margin-bottom: 48px;">
+      <div>
+        <h3 style="margin-bottom: 16px; color: white;">Apex Clinic</h3>
+        <p>Premium, affordable dental care for the entire family. State-of-the-art facilities and experienced staff.</p>
+      </div>
+      <div>
+        <h3 style="margin-bottom: 16px; color: white;">Links</h3>
+        <ul style="list-style:none;">
+          <li style="margin-bottom:8px;"><a href="index.html">Home</a></li>
+          <li style="margin-bottom:8px;"><a href="services.html">Services</a></li>
+          <li style="margin-bottom:8px;"><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="margin-bottom: 16px; color: white;">Services</h3>
+        <ul style="list-style:none;">
+          <li style="margin-bottom:8px;"><a href="services.html">General Dentistry</a></li>
+          <li style="margin-bottom:8px;"><a href="services.html">Teeth Whitening</a></li>
+          <li style="margin-bottom:8px;"><a href="services.html">Implants</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container" style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px; text-align: center; color: var(--text-light); font-size: 14px;">
+      &copy; 2026 Apex Clinic. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
